@@ -33,7 +33,7 @@ int isValidTime(const char *time) {
         !(time[3] >= '0' && time[3] <= '5' && time[4] >= '0' && time[4] <= '9')) return 0;
     int hour = (time[0] - '0') * 10 + (time[1] - '0');
     int minute = (time[3] - '0') * 10 + (time[4] - '0');
-    return (hour >= 0 && hour <= 24 && minute >= 0 && minute <= 59);
+    return (hour >= 0 && hour <= 23 && minute >= 0 && minute <= 59);
 }
 
 void addQueue(Queue *q, Penumpang p) {
