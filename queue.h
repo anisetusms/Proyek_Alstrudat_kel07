@@ -4,7 +4,7 @@
 #define MAX_QUEUE_SIZE 50
 
 typedef struct {
-    int id_penumpang;
+    char id_penumpang[20]; // ID penumpang berupa alphanumeric
     char nama_penumpang[50];
     char jenis_antrian[20];
     char waktu_kedatangan[20];
@@ -20,7 +20,8 @@ typedef struct {
 void initQueue(Queue *q);
 int isEmpty(Queue *q);
 int isFull(Queue *q);
-int isIdExists(Queue *q, int id);
+int isIdExists(Queue *q, const char *id);
+int isValidId(const char *id);
 int isValidTime(const char *time);
 void addQueue(Queue *q, Penumpang p);
 Penumpang delQueue(Queue *q);
